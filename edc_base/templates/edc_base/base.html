@@ -15,7 +15,9 @@
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'edc_base/css/bootstrap.min.css' %}" >
 
-    <link rel="stylesheet" type="text/css" href="{% static 'edc_base/css/font-awesome/css/font-awesome.min.css' %}">
+    <!-- <link rel="stylesheet" type="text/css" href="{% static 'edc_base/css/font-awesome/css/font-awesome.min.css' %}">-->
+    <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+    
     <link rel="stylesheet" type="text/css" href="{% static 'edc_base/css/sticky-footer-navbar.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'edc_base/datetimepicker/css/datetimepicker.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'edc_base/css/edc_base.css' %}">
@@ -45,6 +47,10 @@
     <script type="text/javascript" charset="utf8" src="{% static "edc_base/js/edc-base.js" %}"></script>
     <script type="text/javascript" charset="utf8" src="{% static "edc_base/datetimepicker/js/bootstrap-datetimepicker.min.js" %}"></script>
 
+    <!-- don't forget to run python manage.py collectstatic_js_reverse. See https://github.com/ierror/django-js-reverse -->
+    <script type="text/javascript" charset="utf8" src="{% static 'django_js_reverse/js/reverse.js' %}"></script>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.6/js/all.js"></script>
 
     <script>
     $(document).ready(function(){
@@ -137,7 +143,7 @@
     {% endblock footer_extra_items %}
     <div class="col-md-3"><p class="text-muted small text-center"><span class="fa fa-copyright"></span> {{ copyright }}&nbsp;{{ institution }}</p></div>
     <div class="col-md-3"><p class="text-muted small text-center"><span class="fa fa-leaf"></span> Revision: {{ revision }}</p></div>
-    <div class="col-md-3"><p class="text-muted small text-center"><span class="fa fa-clock-o"></span> {% now "SHORT_DATETIME_FORMAT" %} {% get_current_timezone as TIME_ZONE %} {{ TIME_ZONE }}</p></div>
+    <div class="col-md-3"><p class="text-muted small text-center"><span class="far fa-clock"></span> {% now "SHORT_DATETIME_FORMAT" %} {% get_current_timezone as TIME_ZONE %} {{ TIME_ZONE }}</p></div>
     <div class="col-md-3"><p class="text-muted small text-center"><span class="fa fa-exclamation"></span> {{ disclaimer }}</p></div>
   </div>
 </footer>
