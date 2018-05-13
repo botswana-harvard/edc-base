@@ -1,5 +1,5 @@
-[![Build Status](https://travis-ci.org/botswana-harvard/edc-base.svg?branch=develop)](https://travis-ci.org/botswana-harvard/edc-base)
-[![Coverage Status](https://coveralls.io/repos/botswana-harvard/edc-base/badge.svg?branch=develop&service=github)](https://coveralls.io/github/botswana-harvard/edc-base?branch=develop)
+[![Build Status](https://travis-ci.org/clinicedc/edc-base.svg?branch=develop)](https://travis-ci.org/clinicedc/edc-base)
+[![Coverage Status](https://coveralls.io/repos/clinicedc/edc-base/badge.svg?branch=develop&service=github)](https://coveralls.io/github/clinicedc/edc-base?branch=develop)
 # edc-base
 
 Base model, manager, field, form and admin classes for Edc. 

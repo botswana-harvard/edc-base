@@ -24,7 +24,7 @@ setup(
     install_requires=[
         'django',
         'django[argon2]',
-        # 'django-simple-history',  until new release for DJ2.0
+        'django-simple-history',
         'django-js-reverse',
         'django-logentry-admin',
         'django-debug-toolbar',
