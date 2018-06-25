@@ -3,7 +3,7 @@ __all__ = ['TestModel', 'TestValidatorModel']
 from django.db import models
 
 from ..model_mixins import BaseUuidModel
-from ..sites.site_model_mixin import SiteModelMixin
+from ..sites import SiteModelMixin
 from ..model_validators import CompareNumbersValidator
 
 

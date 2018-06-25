@@ -2,17 +2,18 @@ language: python
 
 python: "3.6"
 
-env:
-  - DJANGO_VERSION=1.11.2
+# env:
+#   - DJANGO_VERSION=1.11.2
 
 services: mysql
 
 install:
   - pip3 install --upgrade pip setuptools
-  - pip3 install -q Django==$DJANGO_VERSION
+# - pip3 install -q Django==$DJANGO_VERSION
   - pip3 install flake8
   - pip3 install coveralls
   - pip3 install mysqlclient
+  - pip3 install -e .
   - pip3 install -q -r requirements.txt
 
 before_script:

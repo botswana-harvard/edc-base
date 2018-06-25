@@ -1,7 +1,6 @@
-from simple_history.models import HistoricalRecords as SimpleHistoricalRecords
-
 from django.db import models
 from django.db.models.fields import AutoField
+from simple_history.models import HistoricalRecords as SimpleHistoricalRecords
 
 from ..utils import get_utcnow
 
@@ -25,7 +24,8 @@ class SerializableModel(models.Model):
 
 class HistoricalRecords(SimpleHistoricalRecords):
 
-    """HistoricalRecords that uses a UUID primary key and has a natural key method.
+    """HistoricalRecords that uses a UUID primary key
+    and has a natural key method.
     """
 
     model_cls = SerializableModel
@@ -38,7 +38,8 @@ class HistoricalRecords(SimpleHistoricalRecords):
         """Return a field instance without initially assuming
         it should be AutoField.
 
-        For example, primary key is UUIDField(primary_key=True, default=uuid.uuid4).
+        For example, primary key is UUIDField(
+            primary_key=True, default=uuid.uuid4).
         """
         try:
             field = [
@@ -51,8 +52,7 @@ class HistoricalRecords(SimpleHistoricalRecords):
     def get_extra_fields(self, model, fields):
         """Overridden to set history_id (to UUIDField).
         """
-        extra_fields = super(
-            HistoricalRecords, self).get_extra_fields(model, fields)
+        extra_fields = super().get_extra_fields(model, fields)
         extra_fields.update({'history_id': self.get_history_id_field(model)})
         extra_fields.update({'natural_key': lambda x: (x.history_id, )})
         return extra_fields

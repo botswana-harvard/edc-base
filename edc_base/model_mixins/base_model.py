@@ -3,9 +3,9 @@ import socket
 from django.db import models
 from django_revision import RevisionField
 
+from ..constants import BASE_MODEL_UPDATE_FIELDS
 from ..model_fields import HostnameModificationField, UserField
 from ..utils import get_utcnow
-from ..constants import BASE_MODEL_UPDATE_FIELDS
 from .url_mixin import UrlMixin
 
 

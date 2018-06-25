@@ -37,6 +37,17 @@ class AdministrationViewMixin(ContextMixin):
         """Returns a dictionary for a single section.
 
         Format is {verbose_name: url_name}
+
+        To be included must be a registered namespace. To main apps
+        urls.py add paths. For example for `ambition_export`:
+
+            urlpatterns = [
+            ...
+            path('admin/', ambition_export_admin.urls),
+            path('ambition_export/', include('ambition_export.urls')),
+            ...
+            ]
+
         """
         section = {}
         try:
@@ -50,6 +61,7 @@ class AdministrationViewMixin(ContextMixin):
         try:
             reverse(url)
         except NoReverseMatch:
+            # probably is not a registered namespace
             pass
         else:
             section = {app_config.verbose_name: url}

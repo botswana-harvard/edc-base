@@ -17,7 +17,11 @@ class SiteModelMixin(models.Model):
 
     def save(self, *args, **kwargs):
         site = Site.objects.get_current()
-        if (int(site.id) == int(settings.REVIEWER_SITE_ID)
+        try:
+            REVIEWER_SITE_ID = settings.REVIEWER_SITE_ID
+        except AttributeError:
+            REVIEWER_SITE_ID = 0
+        if (int(site.id) == int(REVIEWER_SITE_ID)
                 and 'migrate' not in sys.argv):
             raise SiteModelError(
                 'Adding and updating data has been disabled. '

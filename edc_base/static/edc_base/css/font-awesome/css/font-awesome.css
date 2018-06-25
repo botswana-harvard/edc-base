@@ -220,7 +220,7 @@
   content: "\f00c";
 }
 .fa-remove:before,
-.fa-close:before,
+.fa-times:before,
 .fa-times:before {
   content: "\f00d";
 }
@@ -367,7 +367,7 @@
 .fa-picture-o:before {
   content: "\f03e";
 }
-.fa-pencil:before {
+.fa-pencil-alt:before {
   content: "\f040";
 }
 .fa-map-marker:before {
@@ -380,7 +380,7 @@
   content: "\f043";
 }
 .fa-edit:before,
-.fa-pencil-square-o:before {
+.fa-pencil-alt-square-o:before {
   content: "\f044";
 }
 .fa-share-square-o:before {
@@ -470,7 +470,7 @@
 .fa-arrow-down:before {
   content: "\f063";
 }
-.fa-mail-forward:before,
+.fa-share:before,
 .fa-share:before {
   content: "\f064";
 }
@@ -1106,7 +1106,7 @@
 .fa-check-square:before {
   content: "\f14a";
 }
-.fa-pencil-square:before {
+.fa-pencil-alt-square:before {
   content: "\f14b";
 }
 .fa-external-link-square:before {
