@@ -181,7 +181,6 @@ class TestRequiredFieldValidator2(TestCase):
         except (ModelFormFieldValidatorError, InvalidModelFormFieldValidator) as e:
             self.fail(f'Exception unexpectedly raised. Got {e}')
 
-
 class TestApplicableFieldValidator(TestCase):
     """Test applicable_if().
     """
