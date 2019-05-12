@@ -36,7 +36,7 @@ setup(
         'pytz',
         'arrow',
         'python-memcached',
-        'mysqlclient',
+        'pymysql',
         'tqdm',
     ],
     classifiers=[
