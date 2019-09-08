@@ -28,6 +28,12 @@
       <script type="text/javascript" charset="utf8" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+	{% if not live_system %}
+		<style type="text/css">
+		   body { background: #E0FFFF; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+		</style>
+	{% endif %}
+
 	<!-- begin extra-css -->
 	{% block extra-css %}{% endblock extra-css %}
 	<!-- end extra-css -->
@@ -79,7 +85,12 @@
 {% block topbar %}
 
 <!-- topbar -->
-    <nav class="navbar navbar-inverse navbar-fixed-top">
+	{% if live_system %}
+    	<nav class="navbar navbar-inverse navbar-fixed-top">
+    {% else %}
+    	<nav class="navbar navbar-default navbar-fixed-top">
+    {% endif %}
+    
 
       <div class="container-fluid">
 
