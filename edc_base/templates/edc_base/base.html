@@ -28,12 +28,6 @@
       <script type="text/javascript" charset="utf8" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	{% if not live_system %}
-		<style type="text/css">
-		   body { background: #E0FFFF; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-		</style>
-	{% endif %}
-
 	<!-- begin extra-css -->
 	{% block extra-css %}{% endblock extra-css %}
 	<!-- end extra-css -->
@@ -74,7 +68,13 @@
 
 
 <!-- begin extra-styles -->
-{% block extra-styles %}{% endblock extra-styles %}
+{% block extra-styles %}
+	{% if not live_system %}
+		<style type="text/css">
+		   body { background: #E0FFFF; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
+		</style>
+	{% endif %}
+{% endblock extra-styles %}
 <!-- end extra-styles -->
 
 
