@@ -94,6 +94,10 @@ Or you can use the special validators `MinConsentAgeValidator`, `MaxConsentAgeVa
             MaxConsentAgeValidator(64)
         ]
 
+### Test server vs live server:
+
+The theme of the test server and the live server are controlled by site name.
+For a test server site name should always be `Example.com` whereas the live server it should be anything else.
 
 
 ### Audit trail (HistoricalRecord):
