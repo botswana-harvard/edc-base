@@ -1,4 +1,4 @@
-{% load staticfiles %}
+{% load static %}
 {% load tz %}
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +28,7 @@
       <script type="text/javascript" charset="utf8" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	{% if not live_system %}
+	{% if request.site.name|title == 'Example.Com' %}
 		<style type="text/css">
 		   body { background: #E0FFFF; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
 		</style>
@@ -85,7 +85,7 @@
 {% block topbar %}
 
 <!-- topbar -->
-	{% if live_system %}
+	{% if not request.site.name|title == 'Example.Com' %}
     	<nav class="navbar navbar-inverse navbar-fixed-top">
     {% else %}
     	<nav class="navbar navbar-default navbar-fixed-top">
