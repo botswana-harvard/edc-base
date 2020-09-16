@@ -28,11 +28,6 @@
       <script type="text/javascript" charset="utf8" src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
-	{% if request.site.name|title == 'Example.Com' %}
-		<style type="text/css">
-		   body { background: #E0FFFF; } /* Adding !important forces the browser to overwrite the default style applied by Bootstrap */
-		</style>
-	{% endif %}
 
 	<!-- begin extra-css -->
 	{% block extra-css %}{% endblock extra-css %}
@@ -85,11 +80,7 @@
 {% block topbar %}
 
 <!-- topbar -->
-	{% if not request.site.name|title == 'Example.Com' %}
-    	<nav class="navbar navbar-inverse navbar-fixed-top">
-    {% else %}
-    	<nav class="navbar navbar-default navbar-fixed-top">
-    {% endif %}
+    <nav class="navbar navbar-inverse navbar-fixed-top">
     
 
       <div class="container-fluid">
