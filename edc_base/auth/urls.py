@@ -1,6 +1,7 @@
 from django.urls.conf import path
 from django.contrib.auth import views as auth_views
 from .views import LoginView, LogoutView
+from .forms import EmailValidationForm
 
 urlpatterns = [
     path('login/', LoginView.as_view(), name='login'),
@@ -14,7 +15,8 @@ urlpatterns = [
          ),
     path('password-reset/',
          auth_views.PasswordResetView.as_view(
-             template_name='edc_base/auth/password_reset_email.html'
+             form_class=EmailValidationForm,
+             template_name='edc_base/auth/password_reset_email.html',
              ),
          name='password_reset'),
     path('password-reset/done/',
