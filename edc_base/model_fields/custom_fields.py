@@ -188,7 +188,7 @@ class IdentityTypeField(CharField):
         kwargs.setdefault(
             'verbose_name', _('What type of identity number is this?'))
         kwargs.setdefault('editable', True)
-        kwargs.setdefault('max_length', 15)
+        kwargs.setdefault('max_length', 25)
         kwargs.setdefault('choices', IDENTITY_TYPE)
         # kwargs.setdefault('help_text', _('Format is 9999[12]9999'))
         CharField.__init__(self, *args, **kwargs)
