@@ -9,7 +9,7 @@ from math import ceil
 from uuid import uuid4
 
 from django.conf import settings
-from django.utils.encoding import force_text
+from django.utils.encoding import force_str
 
 from edc_base.exceptions import AgeValueError
 
@@ -179,7 +179,7 @@ class Convert(object):
                 pass
         except AttributeError:
             string_value = str(self.value)
-        return string_value or force_text(self.value)
+        return string_value or force_str(self.value)
 
     def to_time(self, string_value):
         if re.match('^[0-9]{1,2}\:[0-9]{2}$', string_value):
