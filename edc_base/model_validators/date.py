@@ -1,6 +1,7 @@
 from datetime import timedelta
 
 from django.core.exceptions import ValidationError
+from pytz import timezone
 
 from ..utils import get_utcnow
 
@@ -18,7 +19,10 @@ def date_not_future(value):
 
 def datetime_is_future(utc_datetime):
     time_error = timedelta(minutes=10)
-    if utc_datetime < get_utcnow() + time_error:
+    tz = timezone('Africa/Gaborone')
+    current_datetime = tz.localize(get_utcnow().replace(tzinfo=None))
+
+    if utc_datetime < current_datetime + time_error:
         raise ValidationError('Expected a future date/time')
 
 
